@@ -1,5 +1,4 @@
-// Projects data
-const projectsData = {
+{
   "projects": [
     {
       "id": "1",
@@ -30,7 +29,7 @@ const projectsData = {
       "images": [
         "images/gamefinder-cover-image.png"
       ],
-      "category": "Check",
+      "category": "Test",
       "featured": false
     },
     {
@@ -46,7 +45,7 @@ const projectsData = {
       "images": [
         "images/gamefinder-cover-image.png"
       ],
-      "category": "WebApp",
+      "category": "Test",
       "featured": false
     },
     {
@@ -98,4 +97,4 @@ const projectsData = {
       "featured": false
     }
   ]
-};
+}

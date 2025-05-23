@@ -10,7 +10,7 @@ function loadProjects() {
 function createProjectCard(project) {
     const featuredBadge = project.featured ? 
         `<div class="absolute top-0 right-0 p-2">
-            <span class="inline-block bg-primary px-2 py-1 text-card text-xs font-bold border-2 border-foreground">NEW</span>
+            <span class="inline-block bg-primary px-2 py-1 text-xs font-bold border-2 border-foreground">FEATURED</span>
         </div>` : '';
         
     const tags = project.tags.map(tag => 
@@ -18,7 +18,7 @@ function createProjectCard(project) {
     ).join('');
     
     return `
-    <div class="project-card bg-card text-foreground shadow-brutal transform transition-all duration-300 hover:-translate-y-2 hover:shadow-none" data-category="${project.category}">
+    <div class="project-card bg-card text-foreground border-4 border-card shadow-brutal transform transition-all duration-300 hover:-translate-y-2 hover:shadow-none" data-category="${project.category}">
         <div class="relative overflow-hidden border-b-4 border-foreground">
             <img 
                 src="${project.images[0]}" 
@@ -28,19 +28,15 @@ function createProjectCard(project) {
             />
             ${featuredBadge}
         </div>
-        <div class="p-6 flex flex-col" style="min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-                <h3 class="font-space font-bold text-xl mb-2">${project.title}</h3>
-                <p class="mb-4">${project.description}</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    ${tags}
-                </div>
+        <div class="p-6">
+            <h3 class="font-space font-bold text-xl mb-2">${project.title}</h3>
+            <p class="mb-4">${project.description}</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+                ${tags}
             </div>
-            <div class="mt-4">
-                <a href="project-detail-${project.slug}.html" class="inline-block w-full text-center px-4 py-2 bg-foreground text-card font-space font-bold border-2 border-foreground hover:bg-primary transition-colors">
-                    VIEW PROJECT
-                </a>
-            </div>
+            <a href="project-detail-${project.slug}.html" class="inline-block w-full text-center px-4 py-2 bg-foreground text-card font-space font-bold border-2 border-foreground hover:bg-primary transition-colors">
+                VIEW PROJECT
+            </a>
         </div>
     </div>
     `;
