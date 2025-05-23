@@ -56,7 +56,10 @@
                 <a href="#projects" class="px-4 py-2 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
                     PROJECTS
                 </a>
-                <a href="#about" class="ml-2 px-4 py-2 bg-primary text-card font-space font-bold border-2 border-foreground shadow-brutal-sm hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
+                <a href="#about" class="px-4 py-2 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
+                    ABOUT
+                </a>
+                <a href="#contact" class="ml-2 px-4 py-2 bg-primary text-card font-space font-bold border-2 border-foreground shadow-brutal-sm hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
                     CONTACT
                 </a>
             </div>
@@ -78,7 +81,10 @@
                 <a href="#projects" class="block px-4 py-3 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
                     PROJECTS
                 </a>
-                <a href="#about" class="block px-4 py-3 mt-2 bg-primary text-card font-space font-bold border-2 border-foreground">
+                <a href="#about" class="block px-4 py-3 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
+                    ABOUT
+                </a>
+                <a href="#contact" class="block px-4 py-3 mt-2 bg-primary text-card font-space font-bold border-2 border-foreground">
                     CONTACT
                 </a>
             </div>
@@ -114,9 +120,9 @@
                                 loading="lazy" 
                             />
                             <div class="mt-4 p-2">
-                                <span class="bg-secondary px-3 py-1 text-sm font-bold border-2 border-foreground">FEATURED</span>
-                                <h3 class="mt-2 font-space font-bold text-xl">Game Finder</h3>
-                                <p class="text-sm mt-1">🎮 Find your next favourite game with ultra-specific filters.</p>
+                                <span class="bg-secondary px-3 py-1 text-sm font-bold border-2 border-foreground">NEW</span>
+                                <h3 class="mt-2 font-space font-bold text-xl">🎮 Game Finder</h3>
+                                <p class="text-sm mt-1">Find your next favourite game with ultra-specific filters.</p>
                             </div>
                         </div>
                         
@@ -129,27 +135,27 @@
         <!-- Projects Section -->
         <section id="projects" class="py-16 lg:py-24 bg-card text-foreground">
             <div class="container mx-auto px-4 md:px-8">
-                <h2 class="text-3xl md:text-5xl font-space font-bold mb-12 project-card">Our Projects</h2>
+                <h2 class="text-3xl md:text-5xl font-space font-bold mb-12">Our Projects</h2>
                 
                 <!-- Filter Categories -->
                 <div class="flex flex-wrap gap-2 mb-12">
                     <button class="filter-button active px-4 py-2 font-space font-medium border-2 border-foreground bg-foreground text-card" data-category="All">
                         ALL
                     </button>
-                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="WebApp">
-                        WEB APPS
+                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="FULL-STACK">
+                      FULL-STACK
                     </button>
-                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="Design">
+                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="FRONT-END">
+                        FRONT-END
+                    </button>
+                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="DESIGN">
                         DESIGN
-                    </button>
-                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="Mobile">
-                        MOBILE
                     </button>
                 </div>
                 
                 <!-- Projects Grid - Dynamically populated by JavaScript -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
-                    <!-- Project cards will be loaded here from projects.json -->
+                    <!-- Project cards will be loaded here from projects.js -->
                     <div class="col-span-3 text-center py-8">
                         <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
                         <p class="mt-2">Loading projects...</p>
@@ -162,66 +168,67 @@
         <section id="about" class="py-16 lg:py-24">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7">
-                        <div class="flex flex-col">
-                            <h2 class="text-3xl md:text-5xl font-space font-bold mb-6">About Us</h2>
-                            <div class="space-y-6">
-                                <p class="text-lg">
-                                    We're a design and development duo creating digital experiences and services. <br>By combining our skills in UX, Service Design and the newest AI Tools we're exploring how far we can go as a two person team. We want our products to be useful, engaging and inspiring. Stay tuned for more! 
-                                </p>
-                            </div>
-                        </div>
+                    <div class="lg:col-span-7 space-y-6">
+                        <h2 class="text-3xl md:text-5xl font-space font-bold mb-6">About Us</h2>
+                        <p class="text-lg">
+                            We're a design and development duo passionate about creating exceptional digital experiences. With our combined skills in design and development, we bring a holistic approach to every project.
+                        </p>
+                        <p class="text-lg">
+                            Our mission is to help businesses and individuals bring their ideas to life through thoughtful design and clean, efficient code. We believe in creating products that are not only visually appealing but also functional and user-friendly.
+                        </p>
                         <div class="flex flex-wrap gap-4 mt-8">
-                            <div class="skills p-4 border-2 border-foreground">
+                            <div class="p-4 border-2 border-foreground">
                                 <h3 class="font-space font-bold text-xl mb-2">Design</h3>
-                                <p>UI/UX/Service Design - always human centred!</p>
+                                <p>UI/UX, Branding, Visual Design</p>
                             </div>
-                            <div class="skills p-4 border-2 border-foreground">
-                                <h3 class="font-space font-bold text-xl mb-2">Strategy</h3>
-                                <p>Iterative User Research and Testing</p>
-                            </div>
-                            <div class="skills p-4 border-2 border-foreground">
+                            <div class="p-4 border-2 border-foreground">
                                 <h3 class="font-space font-bold text-xl mb-2">Development</h3>
-                                <p>Frontend and Backend using the latest AI tools</p>
+                                <p>Frontend, Backend, Full-stack</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="lg:col-span-5 relative">
-                        <div class="about-img bg-white border-4 border-foreground -rotate-2 transform transition-transform hover:rotate-0 duration-300">
+                        <div class="bg-white border-4 border-foreground -rotate-2 transform transition-transform hover:rotate-0 duration-300">
                             <img 
                                 src="images/team-portrait.png" 
                                 alt="Team portrait" 
                                 class="border-foreground w-full h-auto"
                                 loading="lazy" 
                             />
-                        </div>  
-                        <div class="connect-card mt-12 p-6 bg-white border-4 border-secondary shadow-brutal">
-                            <h3 class="text-xl font-space font-bold mb-4">Let's Connect</h3>
-                            <div class="connect-button space-y-3">
-                                <a href="mailto:bleepbloopproducts@gmail.com" class="flex items-center gap-3 py-2 px-4 border-2 hover:bg-foreground hover:text-card transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                                </svg>
-                                <span class="font-space">bleepbloopproducts@gmail.com</span>
-                            </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
-                                </svg>
-                                <span class="font-space">@Berlioz</span>
-                            </a>
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                                </svg>
-                                <span class="font-space">GitHub</span>
-                            </a>
                         </div>
-                    </div>
                         
                         <div class="absolute -bottom-6 -right-6 -z-10 w-full h-full bg-primary border-4 border-foreground"></div>
                         
+                        <div class="mt-12 p-6 bg-card border-4 border-foreground shadow-brutal">
+                            <h3 class="text-xl font-space font-bold mb-4">Let's Connect</h3>
+                            <div class="space-y-3">
+                                <a href="mailto:bleepbloopproducts@gmail.com" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                                    </svg>
+                                    <span class="font-space">bleepbloopproducts@gmail.com</span>
+                                </a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
+                                    </svg>
+                                    <span class="font-space">@Berlioz</span>
+                                </a>
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                                    </svg>
+                                    <span class="font-space">GitHub</span>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+                                    </svg>
+                                    <span class="font-space">LinkedIn</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
