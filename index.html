@@ -121,8 +121,8 @@
                             />
                             <div class="mt-4 p-2">
                                 <span class="bg-secondary px-3 py-1 text-sm font-bold border-2 border-foreground">FEATURED</span>
-                                <h3 class="mt-2 font-space font-bold text-xl">Game Finder</h3>
-                                <p class="text-sm mt-1">🎮 Find your next favourite game with ultra-specific filters.</p>
+                                <h3 class="mt-2 font-space font-bold text-xl">🎮 Game Finder</h3>
+                                <p class="text-sm mt-1">Find your next favourite game with ultra-specific filters.</p>
                             </div>
                         </div>
                         
@@ -135,27 +135,27 @@
         <!-- Projects Section -->
         <section id="projects" class="py-16 lg:py-24 bg-card text-foreground">
             <div class="container mx-auto px-4 md:px-8">
-                <h2 class="text-3xl md:text-5xl font-space font-bold mb-12 project-card">Our Projects</h2>
+                <h2 class="text-3xl md:text-5xl font-space font-bold mb-12">Our Projects</h2>
                 
                 <!-- Filter Categories -->
                 <div class="flex flex-wrap gap-2 mb-12">
                     <button class="filter-button active px-4 py-2 font-space font-medium border-2 border-foreground bg-foreground text-card" data-category="All">
                         ALL
                     </button>
-                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="WebApp">
-                        WEB APPS
+                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="WEB_APPS">
+                      WEB APP
                     </button>
-                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="Design">
+                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="DESIGN">
                         DESIGN
                     </button>
-                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="Mobile">
-                        MOBILE
+                    <button class="filter-button px-4 py-2 font-space font-medium border-2 border-foreground hover:bg-foreground hover:text-card transition-colors" data-category="MOBILE">
+                        WEBSITE
                     </button>
                 </div>
                 
                 <!-- Projects Grid - Dynamically populated by JavaScript -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
-                    <!-- Project cards will be loaded here from projects.json -->
+                    <!-- Project cards will be loaded here from projects.js -->
                     <div class="col-span-3 text-center py-8">
                         <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
                         <p class="mt-2">Loading projects...</p>
