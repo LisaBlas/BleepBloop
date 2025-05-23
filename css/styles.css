@@ -84,10 +84,28 @@ html {
     opacity: 1;
 }
 
-#about{
-    background-color: #0f0f0f;
+#about .connect-card{
+    color:#000000;
+    border-color:#292f36;
+    --tw-shadow: 4px 4px 0px 0px rgb(0, 0, 0);
 }
 
-#about h2{
-    color: #ffffff;
+#about .connect-button a {
+    border-color: #ffffff;
+    background-color: transparent;
+    border-color: #292f36;
+    color: #292f36;
+}
+
+#about .connect-button a:hover {
+    background-color: #1cd5c9;
+    border-color: #292f36;
+}
+
+#about .skills{
+    border-color: #292f36;
+}
+
+#about .about-img{
+    border-color: #292f36;
 }
