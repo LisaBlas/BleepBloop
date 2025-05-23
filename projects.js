@@ -30,7 +30,7 @@ const projectsData = {
       "images": [
         "images/gamefinder-cover-image.png"
       ],
-      "category": "WebApp",
+      "category": "Check",
       "featured": false
     },
     {
