@@ -12,14 +12,15 @@ const projectsData = {
       "liveLink": "https://gamefinder-app.com",
       "githubLink": "https://github.com/LisaBlas/GameFinder",
       "images": [
-        "images/gamefinder-cover-image.png"
+        "images/gamefinder-cover-image.png",
+        "images/gamefinder-keyword-screenshot.png"
       ],
       "category": "FULL-STACK",
       "featured": true
     },
     {
       "id": "2",
-      "slug": "",
+      "slug": "tba",
       "title": "🔨 Coming Soon...",
       "description": "Work In Progress",
       "longDescription": "Placeholder Description",
