@@ -10,7 +10,7 @@ function loadProjects() {
 function createProjectCard(project) {
     const featuredBadge = project.featured ? 
         `<div class="absolute top-0 right-0 p-2">
-            <span class="inline-block bg-primary px-2 py-1 text-xs font-bold border-2 border-foreground">FEATURED</span>
+            <span class="inline-block bg-primary px-2 py-1 text-card text-xs font-bold border-2 border-foreground">NEW</span>
         </div>` : '';
         
     const tags = project.tags.map(tag => 
