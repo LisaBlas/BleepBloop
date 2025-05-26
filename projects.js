@@ -29,7 +29,7 @@ const projectsData = {
       "liveLink": "#",
       "githubLink": "#",
       "images": [
-        "images/bleep-bloop-logo.png"
+        "images/work-in-progress-image.png"
       ],
       "category": "",
       "featured": false
