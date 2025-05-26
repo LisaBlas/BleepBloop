@@ -112,19 +112,21 @@
                     
                     <div class="lg:col-span-5 relative">
                         <!-- Featured Project Preview -->
-                        <div class="bg-white p-3 border-4 border-foreground shadow-brutal rotate-2 transform transition-transform hover:rotate-0 duration-300">
-                            <img 
-                                src="images/gamefinder-cover-image.png" 
-                                alt="Featured project dashboard interface" 
-                                class="border-2 border-foreground w-full h-auto"
-                                loading="lazy" 
-                            />
-                            <div class="mt-4 p-2">
-                                <span class="bg-secondary px-3 py-1 text-sm font-bold border-2 border-foreground">NEW</span>
-                                <h3 class="mt-2 font-space font-bold text-xl">🎮 Game Finder</h3>
-                                <p class="text-sm mt-1">Find your next favourite game with ultra-specific filters.</p>
+                        <a href="project-detail-game-finder.html">
+                            <div class="bg-white p-3 border-4 border-foreground shadow-brutal rotate-2 transform transition-transform hover:rotate-0 duration-300">
+                                <img 
+                                    src="images/gamefinder-cover-image.png" 
+                                    alt="Featured project dashboard interface" 
+                                    class="object-cover border-2 border-foreground w-full h-auto max-h-[300px]"
+                                    loading="lazy" 
+                                />
+                                <div class="mt-4 p-2">
+                                    <span class="bg-secondary px-3 py-1 text-sm font-bold border-2 border-foreground">NEW</span>
+                                    <h3 class="mt-2 font-space font-bold text-xl">🎮 Game Finder</h3>
+                                    <p class="text-sm mt-1">Find your next favourite game with ultra-specific filters.</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         
                         <div class="absolute -bottom-6 -left-6 -z-10 w-full h-full bg-secondary border-4 border-foreground"></div>
                     </div>
@@ -202,7 +204,7 @@
                                 loading="lazy" 
                             />
                         </div>  
-                        <div class="connect-card mt-12 p-6 bg-white border-4 border-secondary shadow-brutal">
+                        <div id="contact" class="connect-card mt-12 p-6 bg-white border-4 border-secondary shadow-brutal">
                             <h3 class="text-xl font-space font-bold mb-4">Let's Connect</h3>
                             <div class="connect-button space-y-3">
                                 <a href="mailto:bleepbloopproducts@gmail.com" class="flex items-center gap-3 py-2 px-4 border-2 hover:bg-foreground hover:text-card transition-colors">
@@ -211,13 +213,13 @@
                                 </svg>
                                 <span class="font-space">bleepbloopproducts@gmail.com</span>
                             </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
+                            <a href="https://twitter.com/BerliozGordon" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
                                 </svg>
-                                <span class="font-space">@Berlioz</span>
+                                <span class="font-space">@BerliozGordon</span>
                             </a>
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
+                            <a href="https://github.com/LisaBlas" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 py-2 px-4 border-2 border-foreground hover:bg-foreground hover:text-card transition-colors">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                                 </svg>
@@ -245,79 +247,6 @@
                     <p class="mt-4 text-card/80">
                         Creating thoughtful digital experiences through clean code and intentional design.
                     </p>
-                </div>
-                
-                <div class="md:col-span-2">
-                    <h3 class="text-lg font-space font-bold mb-4">Site</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#hero" class="hover:text-primary transition-colors">Home</a></li>
-                        <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
-                        <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
-                        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="md:col-span-3">
-                    <h3 class="text-lg font-space font-bold mb-4">Connect</h3>
-                    <ul class="space-y-2">
-                        <li>
-                            <a 
-                                href="https://github.com" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="hover:text-primary transition-colors"
-                            >
-                                GitHub
-                            </a>
-                        </li>
-                        <li>
-                            <a 
-                                href="https://linkedin.com" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="hover:text-primary transition-colors"
-                            >
-                                LinkedIn
-                            </a>
-                        </li>
-                        <li>
-                            <a 
-                                href="https://twitter.com" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="hover:text-primary transition-colors"
-                            >
-                                Twitter
-                            </a>
-                        </li>
-                        <li>
-                            <a 
-                                href="mailto:bleepbloopproducts@gmail.com" 
-                                class="hover:text-primary transition-colors"
-                            >
-                                Email
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="md:col-span-3">
-                    <h3 class="text-lg font-space font-bold mb-4">Newsletter</h3>
-                    <p class="mb-4 text-card/80">Stay updated with our latest projects and articles.</p>
-                    <form id="footer-newsletter-form" class="flex flex-col gap-2">
-                        <input 
-                            type="email" 
-                            placeholder="Your email" 
-                            class="p-3 bg-foreground border border-card/20 focus:border-primary focus:outline-none"
-                            required
-                        />
-                        <button 
-                            type="submit" 
-                            class="px-4 py-3 bg-primary text-card font-space font-bold border border-primary hover:bg-opacity-90 transition-colors"
-                        >
-                            SUBSCRIBE
-                        </button>
-                    </form>
                 </div>
             </div>
             

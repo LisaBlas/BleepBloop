@@ -23,7 +23,7 @@ function createProjectCard(project) {
             <img 
                 src="${project.images[0]}" 
                 alt="${project.title} project" 
-                class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+                class="w-full h-48 object-fill transition-transform duration-500 hover:scale-105"
                 loading="lazy" 
             />
             ${featuredBadge}
