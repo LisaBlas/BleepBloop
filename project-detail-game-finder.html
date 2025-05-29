@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Game Finder - BLEEP.BLOOP</title>
+    <meta name="Game Finder" content="Find your next favourite game with ultra-specific filters.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B6B',
+                        secondary: '#4ECDC4',
+                        foreground: '#292F36',
+                        card: '#FFFFFF',
+                        dark: '#292F36'
+                    },
+                    fontFamily: {
+                        'space': ['"Space Grotesk"', 'sans-serif'],
+                        'mono': ['monospace']
+                    },
+                    boxShadow: {
+                        'brutal': '4px 4px 0px 0px rgba(41, 47, 54, 1)',
+                        'brutal-sm': '3px 3px 0px 0px rgba(41, 47, 54, 1)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-card text-foreground">
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 w-full z-50 bg-card/90 border-b-4 border-dark" id="navbar">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-space font-bold flex items-center">
+                <span class="text-primary">BLEEP</span><span class="text-foreground">.BLOOP</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-1">
+                <a href="index.html#hero" class="px-4 py-2 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
+                    HOME
+                </a>
+                <a href="index.html#projects" class="px-4 py-2 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
+                    PROJECTS
+                </a>
+                <a href="index.html#about" class="px-4 py-2 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
+                    ABOUT
+                </a>
+                <a href="index.html#contact" class="ml-2 px-4 py-2 bg-primary text-card font-space font-bold border-2 border-foreground shadow-brutal-sm hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
+                    CONTACT
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 bg-card border-2 border-foreground" id="mobile-menu-button" aria-label="Toggle mobile menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-card border-t-4 border-foreground hidden" id="mobile-menu">
+            <div class="px-4 py-2 space-y-1">
+                <a href="index.html#hero" class="block px-4 py-3 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
+                    HOME
+                </a>
+                <a href="index.html#projects" class="block px-4 py-3 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
+                    PROJECTS
+                </a>
+                <a href="index.html#about" class="block px-4 py-3 font-space font-medium hover:bg-foreground hover:text-card transition-colors">
+                    ABOUT
+                </a>
+                <a href="index.html#contact" class="block px-4 py-3 mt-2 bg-primary text-card font-space font-bold border-2 border-foreground">
+                    CONTACT
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20">
+        <div class="container mx-auto px-4 md:px-8">
+            <!-- Project Header -->
+            <div class="mb-12">
+                <div class="flex flex-wrap items-center gap-4 mb-4">
+                    <a href="index.html#projects" class="inline-block px-4 py-2 bg-card text-foreground font-space font-bold border-2 border-foreground shadow-brutal-sm hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
+                        ← Back to Projects
+                    </a>
+                    <div class="flex flex-wrap gap-2 ml-auto">
+                        <span class="px-2 py-1 text-xs font-bold bg-secondary border-2 border-foreground">Full-Stack</span>
+                    </div>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-space font-bold leading-tight">🎮 Game Finder</h1>
+                <p class="text-xl mt-4 max-w-3xl">Find your next favourite game with ultra-specific filters.</p>
+            </div>
+            
+            <!-- Project Gallery -->
+            <div class="mb-16">
+                <div class="relative border-4 border-foreground shadow-brutal">
+                    <img
+                        src="images/gamefinder-cover-image.png"
+                        alt="Game Finder screenshot"
+                        class="w-full h-auto object-cover max-h-[520px]"
+                        loading="lazy"
+                        id="main-image"
+                    />
+                    
+                    <div class="absolute inset-0 flex items-center justify-between p-4">
+                        <button 
+                            id="prev-button"
+                            class="bg-foreground text-card p-2 rounded-full hover:bg-opacity-90 transition-all"
+                            aria-label="Previous image"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </button>
+                        <button 
+                            id="next-button"
+                            class="bg-foreground text-card p-2 rounded-full hover:bg-opacity-90 transition-all"
+                            aria-label="Next image"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Thumbnail navigation -->
+                <div class="flex flex-wrap gap-2 mt-4" id="thumbnails">
+                    <button
+                        class="thumbnail-button active w-20 h-20 border-2 border-primary overflow-hidden transition-all"
+                        data-image="images/gamefinder-cover-image.png"
+                        aria-label="View image 1"
+                    >
+                        <img
+                            src="images/gamefinder-cover-image.png"
+                            alt="GameFinder Cover Image"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    </button>
+                    <button
+                        class="thumbnail-button w-20 h-20 border-2 border-foreground overflow-hidden transition-all"
+                        data-image="images/gamefinder-keyword-screenshot.png"
+                        aria-label="View image 2"
+                    >
+                        <img
+                            src="images/gamefinder-keyword-screenshot.png"
+                            alt="GameFinder Keyword Screenshot"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    </button>
+                    <button
+                        class="thumbnail-button w-20 h-20 border-2 border-foreground overflow-hidden transition-all"
+                        data-image="images/gamefinder-results-screenshot.png"
+                        aria-label="View image 2"
+                    >
+                        <img
+                            src="images/gamefinder-results-screenshot.png"
+                            alt="GameFinder Results Screenshot"
+                            class="w-full h-full object-cover"
+                            loading="lazy"
+                        />
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Project Details -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-8 space-y-6">
+                    <h2 class="text-3xl font-space font-bold">Project Details</h2>
+                    <div class="prose prose-lg max-w-none">
+                        <p>
+                            Gamefinder is a powerful, easy-to-use web app that helps you discover the best games across all platforms based on your exact tastes.
+
+Whether you're looking for a specific game mechanic, time period, ambience, narration style... Gamefinder makes it effortless to find what you're really looking for.
+                        </p>
+                        <p>
+                            <br>🚀 Why Gamefinder? <br>Other game discovery tools give you more noise than signal. Gamefinder was built to fix that — with a fast, filter-first experience designed for all. You don’t need to scroll through hundreds of games — just tell Gamefinder what you want, and it finds it.
+                        </p>
+                        <p>
+                            <br>🔍 How It Works<br>Gamefinder uses 10s of thousand of ultra-niche and specific tags to help you find the games you want. Keywords are crafted by a community of gamers. We then sort them into unique categories, curate them to inspire and guide the search, and use them to filter results.
+                        </p>
+                        <p>
+                            <br>🎮 Try it out!<br> No more endless scrolling, vague recommendations, or sorting through games you’re not interested in — just smart, focused results powered by tags.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-4">
+                    <div class="bg-card p-6 border-4 border-foreground shadow-brutal">
+                        <h3 class="text-xl font-space font-bold mb-4">Project Info</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-space font-bold">Tools & Technologies</h4>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="px-3 py-1 text-sm bg-card border-2 border-foreground font-mono">React</span>
+                                    <span class="px-3 py-1 text-sm bg-card border-2 border-foreground font-mono">Tailwind CSS</span>
+                                    <span class="px-3 py-1 text-sm bg-card border-2 border-foreground font-mono">Node.js</span>
+                                    <span class="px-3 py-1 text-sm bg-card border-2 border-foreground font-mono">Express</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-space font-bold">Links</h4>
+                                <div class="flex flex-col gap-2 mt-2">
+                                    <a 
+                                        href="https://gamefinder-app.com" 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-block w-full text-center px-4 py-2 bg-primary text-card font-space font-bold border-2 border-foreground shadow-brutal-sm hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                                    >
+                                        View Live Site
+                                    </a>
+                                    <a 
+                                        href="https://github.com/LisaBlas/GameFinder" 
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-block w-full text-center px-4 py-2 bg-card text-foreground font-space font-bold border-2 border-foreground shadow-brutal-sm hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                                    >
+                                        GitHub Repository
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-secondary p-6 border-4 border-foreground shadow-brutal">
+                        <h3 class="text-xl font-space font-bold mb-4">Interested in a similar project?</h3>
+                        <p class="mb-4">Let's discuss how we can work together on your next digital venture.</p>
+                        <a 
+                            href="index.html#contact" 
+                            class="inline-block w-full text-center px-4 py-2 bg-primary text-card font-space font-bold border-2 border-foreground shadow-brutal-sm hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                        >
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="mt-20 text-center">
+                <h2 class="text-3xl font-space font-bold mb-6">Explore More Projects</h2>
+                <a 
+                    href="index.html#projects" 
+                    class="inline-block px-6 py-3 bg-primary text-card font-space font-bold border-2 border-foreground shadow-brutal hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                >
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-card py-12 border-t-4 border-primary">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+                <div class="md:col-span-4">
+                    <a href="index.html" class="text-2xl font-space font-bold flex items-center">
+                        <span class="text-primary">BLEEP</span><span class="text-card">.BLOOP</span>
+                    </a>
+                    <p class="mt-4 text-card/80">
+                        Creating thoughtful digital experiences through clean code and intentional design.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-card/20 text-center text-card/60">
+                <p>&copy; <span id="current-year"></span> Bleep Bloop Products. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
