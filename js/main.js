@@ -23,7 +23,7 @@ function createProjectCard(project) {
             <img 
                 src="${project.images[0]}" 
                 alt="${project.title} project" 
-                class="w-full h-48 object-fill transition-transform duration-500 hover:scale-105"
+                class="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
                 loading="lazy" 
             />
             ${featuredBadge}
@@ -66,7 +66,7 @@ function renderProjects() {
     setupProjectFiltering();
     
     // Run animation on scroll after projects are loaded
-    animateOnScroll();
+    // Initial animation check will be handled by the main scroll handler
 }
 
 // Function to set up project filtering
@@ -131,23 +131,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Navbar shadow on scroll
+    // Navbar scroll behavior (shadow + hide/show)
     const navbar = document.getElementById('navbar');
+    let lastScrollY = window.scrollY;
+    let isNavbarHidden = false;
     
-    function handleScroll() {
-        if (window.scrollY > 10) {
+    function handleNavbarScroll() {
+        const currentScrollY = window.scrollY;
+        const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+        
+        // Add shadow when scrolled
+        if (currentScrollY > 10) {
             navbar.classList.add('shadow-md');
         } else {
             navbar.classList.remove('shadow-md');
         }
+        
+        // Only hide/show navbar if scrolled enough and past threshold
+        if (currentScrollY > 150 && scrollDifference > 10) {
+            if (currentScrollY > lastScrollY && !isNavbarHidden) {
+                // Scrolling down - hide navbar
+                isNavbarHidden = true;
+                navbar.style.transform = 'translateY(-100%)';
+                navbar.style.transition = 'transform 0.3s ease-in-out';
+            } else if (currentScrollY < lastScrollY && isNavbarHidden) {
+                // Scrolling up - show navbar
+                isNavbarHidden = false;
+                navbar.style.transform = 'translateY(0)';
+                navbar.style.transition = 'transform 0.3s ease-in-out';
+            }
+        } else if (currentScrollY <= 150) {
+            // Always show navbar when near top of page
+            isNavbarHidden = false;
+            navbar.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollY = currentScrollY;
     }
     
-    window.addEventListener('scroll', handleScroll);
-    
-    // Animation on scroll
-    function animateOnScroll() {
-        const elements = document.querySelectorAll('.project-card, h2, h3');
+    // Combined scroll handler for navbar and animations
+    function handleScroll() {
+        // Handle navbar behavior
+        handleNavbarScroll();
         
+        // Handle element animations
+        const elements = document.querySelectorAll('.project-card, h2, h3');
         elements.forEach(el => {
             const elementTop = el.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
@@ -158,11 +186,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Run on initial load
-    animateOnScroll();
+    // Throttle scroll events for better performance
+    let ticking = false;
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(handleScroll);
+            ticking = true;
+            setTimeout(() => {
+                ticking = false;
+            }, 16); // ~60fps
+        }
+    }
     
-    // Add scroll event listener
-    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('scroll', requestTick);
+    
+    // Run animation on initial load
+    const elements = document.querySelectorAll('.project-card, h2, h3');
+    elements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight * 0.9) {
+            el.classList.add('slide-in');
+        }
+    });
     
     // Load and render projects from JSON
     renderProjects();
@@ -222,58 +269,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateActiveThumbnail();
             });
         });
-    }
-    
-    // Form submission handling
-    const contactForm = document.getElementById('contact-form');
-    const newsletterForm = document.getElementById('newsletter-form');
-    const footerNewsletterForm = document.getElementById('footer-newsletter-form');
-    
-    function showToast(message) {
-        // Create toast element
-        const toast = document.createElement('div');
-        toast.className = 'toast';
-        toast.textContent = message;
-        
-        // Add to DOM
-        document.body.appendChild(toast);
-        
-        // Show toast
-        setTimeout(() => {
-            toast.classList.add('show');
-        }, 100);
-        
-        // Hide and remove toast
-        setTimeout(() => {
-            toast.classList.remove('show');
-            setTimeout(() => {
-                document.body.removeChild(toast);
-            }, 300);
-        }, 3000);
-    }
-    
-    function handleFormSubmit(e, formName) {
-        e.preventDefault();
-        
-        // In a real implementation, you would send the form data to a server
-        // For this static version, we'll just show a success message
-        
-        // Reset form
-        e.target.reset();
-        
-        // Show success message
-        showToast(`${formName} submitted successfully!`);
-    }
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => handleFormSubmit(e, 'Contact form'));
-    }
-    
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => handleFormSubmit(e, 'Newsletter subscription'));
-    }
-    
-    if (footerNewsletterForm) {
-        footerNewsletterForm.addEventListener('submit', (e) => handleFormSubmit(e, 'Newsletter subscription'));
     }
 });
